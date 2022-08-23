@@ -1,5 +1,5 @@
 import React from "react";
-import { MdRestaurantMenu, MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
+import { MdRestaurantMenu, MdArrowDropDown, MdClose, MdMenu, MdArrowRight } from "react-icons/md";
 
 const Header = () => {
 	return (
@@ -29,7 +29,7 @@ const Header = () => {
 								<li>
 									<a href="#">
 										Lunch
-										<MdArrowDropDown />
+										<MdArrowRight />
 									</a>
 									<ul className="sub-menu">
 										<li>
@@ -41,7 +41,7 @@ const Header = () => {
 										<li>
 											<a href="#">
 												More ...
-												<MdArrowDropDown />
+												<MdArrowRight />
 											</a>
 											<ul className="sub-menu">
 												<li>

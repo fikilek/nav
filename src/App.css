@@ -97,6 +97,7 @@ nav {
 
 .nav-list a:hover {
   color: #eb3007;
+  border: 2px solid rebeccapurple ;
 }
 
 .btn {
