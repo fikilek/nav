@@ -1,22 +1,23 @@
-import React from "react";
-import { MdRestaurantMenu, MdArrowDropDown, MdClose, MdMenu, MdArrowRight } from "react-icons/md";
+import React, { useState } from "react";
+import { MdArrowDropDown, MdClose, MdMenu } from "react-icons/md";
+import { FaRubleSign } from "react-icons/fa";
+import "./header.css";
+import { NavLink } from "react-router-dom";
 
 const Header = () => {
+	const [menuStatus, setMenuStatus] = useState(true);
+	console.log(`meunStatus`, menuStatus)
 	return (
 		<header>
 			<div className="container">
 				<nav>
-					<div className="meni-icons">
-						<MdMenu />
-						<MdClose />
+					<div className="logo">
+						{/* <NavLink to="/" > */}
+						<FaRubleSign />
+						{/* </NavLink> */}
 					</div>
-					<a href="index.html" className="logo">
-						<MdRestaurantMenu />
-					</a>
-					<ul className="nav-list">
-						<li>
-							<a href="#">Home</a>
-						</li>
+					<ul className={`nav-list ${menuStatus ? '' : 'show' }`} onClick={() => setMenuStatus(true)}>
+					{/* <ul className="nav-list" onClick={() => setMenuStatus(true)}> */}
 						<li>
 							<a href="#">
 								Menu
@@ -29,7 +30,7 @@ const Header = () => {
 								<li>
 									<a href="#">
 										Lunch
-										<MdArrowRight />
+										<MdArrowDropDown />
 									</a>
 									<ul className="sub-menu">
 										<li>
@@ -41,7 +42,7 @@ const Header = () => {
 										<li>
 											<a href="#">
 												More ...
-												<MdArrowRight />
+												<MdArrowDropDown />
 											</a>
 											<ul className="sub-menu">
 												<li>
@@ -81,6 +82,9 @@ const Header = () => {
 							<a href="#">Book a table</a>
 						</li>
 					</ul>
+					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>
+						{menuStatus ? <MdMenu /> : <MdClose />}
+					</div>
 				</nav>
 			</div>
 		</header>
