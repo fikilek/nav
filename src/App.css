@@ -1,7 +1,7 @@
 /* TODO: Introdive css variables */
 /* TODO: Split css code imnto own components */
 
-:: root {
+:root {
   --logo-height: 5rem;
 }
 
@@ -70,8 +70,8 @@ nav {
 	height: var(--logo-height);
 	background-color: #eb3007;
 	display: flex;
-	/* align-items: center;
-  justify-content: center; */
+	align-items: center;
+  justify-content: center;
 	border-radius: 100%;
 	margin-right: 5rem;
 }
@@ -110,6 +110,10 @@ nav {
 .nav-list a:hover {
 	color: #eb3007;
 	border: 2px solid rebeccapurple;
+}
+
+li.move-right a:hover {
+  border: none;
 }
 
 .btn {

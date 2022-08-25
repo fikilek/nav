@@ -11,9 +11,9 @@ const Header = () => {
 			<div className="container">
 				<nav>
 					<div className="logo">
-						{/* <NavLink to="/" > */}
-						<FaRubleSign />
-						{/* </NavLink> */}
+						<NavLink to="/">
+							<FaRubleSign />
+						</NavLink>
 					</div>
 					<ul
 						className={`nav-list ${menuStatus ? "" : "show"}`}
@@ -21,153 +21,153 @@ const Header = () => {
 					>
 						{/* Dashboard */}
 						<li>
-							<a href="#">
+							<NavLink to="/dbd">
 								Dbd
 								<MdArrowDropDown />
-							</a>
+							</NavLink>
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Feeders</a>
+									<NavLink to="/dbd/fdrs">Feeders</NavLink>
 								</li>
 								<li>
-									<a href="#">Poles</a>
+									<NavLink to="/dbd/pls">Poless</NavLink>
 								</li>
 								<li>
-									<a href="#">Boxes</a>
+									<NavLink to="/dbd/bxs">Boxes</NavLink>
 								</li>
 								<li>
-									<a href="#">Meters</a>
+									<NavLink to="/dbd/ems">Meters</NavLink>
 								</li>
 								<li>
-									<a href="#">Cuicuit Breakers</a>
+									<NavLink to="/dbd/pls">Circuit Breakers</NavLink>
 								</li>
 								<li>
-									<a href="#">Seals</a>
+									<NavLink to="/dbd/sls">Seals</NavLink>
 								</li>
 							</ul>
 						</li>{" "}
 						{/* Assets */}
 						<li>
-							<a href="#">
+							<NavLink to="/dbd">
 								Asts
 								<MdArrowDropDown />
-							</a>
+							</NavLink>
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Feeders</a>
+									<NavLink to="/dbd/fdrs">Feeders</NavLink>
 								</li>
 								<li>
-									<a href="#">Poles</a>
+									<NavLink to="/dbd/pls">Poless</NavLink>
 								</li>
 								<li>
-									<a href="#">Boxes</a>
+									<NavLink to="/dbd/bxs">Boxes</NavLink>
 								</li>
 								<li>
-									<a href="#">Meters</a>
+									<NavLink to="/dbd/ems">Meters</NavLink>
 								</li>
 								<li>
-									<a href="#">Cuicuit Breakers</a>
+									<NavLink to="/dbd/pls">Circuit Breakers</NavLink>
 								</li>
 								<li>
-									<a href="#">Seals</a>
+									<NavLink to="/dbd/sls">Seals</NavLink>
 								</li>
 							</ul>
 						</li>
 						{/* Transactions */}
 						<li>
-							<a href="#">
+							<NavLink to="/trns">
 								Trns
 								<MdArrowDropDown />
-							</a>
+							</NavLink>
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Goods Receiving</a>
+									<NavLink to="/trns/grv">Goods Receiving</NavLink>
 								</li>
 								<li>
-									<a href="#">Installations</a>
+									<NavLink to="/trns/inst">Installations</NavLink>
 								</li>
 								<li>
-									<a href="#">Comissioning</a>
+									<NavLink to="/trns/com">Comissioning</NavLink>
 								</li>
 								<li>
-									<a href="#">Decomissioning</a>
+									<NavLink to="/trns/dcom">Decomissioning</NavLink>
 								</li>
 								<li>
-									<a href="#">Disconnection</a>
+									<NavLink to="/trns/dcn">Disconnections</NavLink>
 								</li>
 								<li>
-									<a href="#">Reconnection</a>
+									<NavLink to="/trns/rcn">Reconnections</NavLink>
 								</li>
 								<li>
-									<a href="#">Audit/Inspection</a>
+									<NavLink to="/trns/aud">Audit/Inspection</NavLink>
 								</li>
 								<li>
-									<a href="#">Vending</a>
+									<NavLink to="/trns/vnd">Vending</NavLink>
 								</li>
 								<li>
-									<a href="#">Missing</a>
+									<NavLink to="/trns/msng">Missing</NavLink>
 								</li>
 								<li>
-									<a href="#">Found</a>
+									<NavLink to="/trns/fnd">Found</NavLink>
 								</li>
 								<li>
-									<a href="#">Back To Supplier</a>
+									<NavLink to="/trns/bts">Back To Supplier</NavLink>
 								</li>
 							</ul>
 						</li>
 						{/* Erfs */}
 						<li>
-							<a href="#">Erfs</a>
+							<NavLink to="/erfs">Erfs</NavLink>
 						</li>
 						{/* Body of Knowledge (Bok) */}
 						<li>
-							<a href="#">Bok</a>
+							<NavLink to="/bok">Bok</NavLink>
 						</li>
 						{/* Admin */}
 						<li>
-							<a href="#">
+							<NavLink to="/admin">
 								Admin
 								<MdArrowDropDown />
-							</a>
+							</NavLink>
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Users</a>
+									<NavLink to="/admin/unps">Users</NavLink>
 								</li>
 								<li>
-									<a href="#">
-										System Tables
+									<NavLink to="/admin/syst">
+										System Tbles
 										<MdArrowDropDown />
-									</a>
+									</NavLink>
 									<ul className="sub-menu">
 										<li>
-											<a href="#">User Roles</a>
+											<NavLink to="/admin/syst/urs">User Roles</NavLink>
 										</li>
 										<li>
-											<a href="#">Assets States</a>
+											<NavLink to="/admin/syst/ast-stt">Assets States</NavLink>
 										</li>
 										<li>
-											<a href="#">Transaction States</a>
+											<NavLink to="/admin/syst/trn-stt">Transaction States</NavLink>
 										</li>
 									</ul>
 								</li>
 								<li>
-									<a href="#">Mobile Devices</a>
+									<NavLink to="/admin/mds">Mobile Devices</NavLink>
 								</li>
 								<li>
-									<a href="#">Simcards</a>
+									<NavLink to="/admin/smcs">Simcards</NavLink>
 								</li>
 							</ul>
 						</li>{" "}
 						<li className="btn  move-right">
-							<a href="#">FK</a>
+							<NavLink to="/unp">FK</NavLink>
 
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Profile</a>
+									<NavLink to="/unp/prfl">Profile</NavLink>
 								</li>
 
 								<li>
-									<a href="#">Sign Out</a>
+									<NavLink to="/unp/sot">Sign Out</NavLink>
 								</li>
 							</ul>
 						</li>
