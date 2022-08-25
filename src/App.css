@@ -1,3 +1,10 @@
+/* TODO: Introdive css variables */
+/* TODO: Split css code imnto own components */
+
+:: root {
+  --logo-height: 5rem;
+}
+
 *,
 *::before,
 *::after {
@@ -60,7 +67,7 @@ nav {
 
 .logo {
 	width: 5rem;
-	height: 5rem;
+	height: var(--logo-height);
 	background-color: #eb3007;
 	display: flex;
 	/* align-items: center;
@@ -97,7 +104,7 @@ nav {
 	font-size: 1.4rem;
 	text-transform: uppercase;
 	transition: color 650ms;
-	border: 2px solid rgb(211, 211, 211);
+	/* border: 2px solid rgb(211, 211, 211); */
 }
 
 .nav-list a:hover {
@@ -188,7 +195,7 @@ li.move-right {
 @media screen and (max-width: 850px) {
 	.nav-list {
 		position: fixed;
-		top: 0;
+		top: 5rem;
 		left: 0;
 		height: 100vh;
 		flex-direction: column;
@@ -197,6 +204,7 @@ li.move-right {
 		z-index: 1000;
 		color: rgb(18, 18, 18);
     display: none;
+    overflow-y: scroll;
 	}
 
 	.nav-list > li {
