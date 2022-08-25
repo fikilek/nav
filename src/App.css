@@ -141,6 +141,10 @@ nav {
 	border-bottom-color: #eb3007;
 }
 
+li.move-right .sub-menu::before {
+	left:80%;
+}
+
 .sub-menu .sub-menu::before {
 	top: 0.9rem;
 	left: -2.5rem;
@@ -160,6 +164,18 @@ nav {
 	opacity: 1;
 	visibility: visible;
 }
+
+.nav-list li.move-right > .sub-menu {
+  right: 0;
+}
+
+.nav-list li.move-right:hover > .sub-menu {
+	top: 5rem;
+  right: 0;
+	opacity: 1;
+	visibility: visible;
+}
+
 .sub-menu li:hover > .sub-menu {
 	top: 0;
 	left: 100%;

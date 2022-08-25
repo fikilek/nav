@@ -6,7 +6,6 @@ import { NavLink } from "react-router-dom";
 
 const Header = () => {
 	const [menuStatus, setMenuStatus] = useState(true);
-	console.log(`meunStatus`, menuStatus)
 	return (
 		<header>
 			<div className="container">
@@ -16,70 +15,161 @@ const Header = () => {
 						<FaRubleSign />
 						{/* </NavLink> */}
 					</div>
-					<ul className={`nav-list ${menuStatus ? '' : 'show' }`} onClick={() => setMenuStatus(true)}>
-					{/* <ul className="nav-list" onClick={() => setMenuStatus(true)}> */}
+					<ul
+						className={`nav-list ${menuStatus ? "" : "show"}`}
+						onClick={() => setMenuStatus(true)}
+					>
+						{/* Dashboard */}
 						<li>
 							<a href="#">
-								Menu
+								Dbd
 								<MdArrowDropDown />
 							</a>
 							<ul className="sub-menu">
 								<li>
-									<a href="#">Breakfast</a>
+									<a href="#">Feeders</a>
+								</li>
+								<li>
+									<a href="#">Poles</a>
+								</li>
+								<li>
+									<a href="#">Boxes</a>
+								</li>
+								<li>
+									<a href="#">Meters</a>
+								</li>
+								<li>
+									<a href="#">Cuicuit Breakers</a>
+								</li>
+								<li>
+									<a href="#">Seals</a>
+								</li>
+							</ul>
+						</li>{" "}
+						{/* Assets */}
+						<li>
+							<a href="#">
+								Asts
+								<MdArrowDropDown />
+							</a>
+							<ul className="sub-menu">
+								<li>
+									<a href="#">Feeders</a>
+								</li>
+								<li>
+									<a href="#">Poles</a>
+								</li>
+								<li>
+									<a href="#">Boxes</a>
+								</li>
+								<li>
+									<a href="#">Meters</a>
+								</li>
+								<li>
+									<a href="#">Cuicuit Breakers</a>
+								</li>
+								<li>
+									<a href="#">Seals</a>
+								</li>
+							</ul>
+						</li>
+						{/* Transactions */}
+						<li>
+							<a href="#">
+								Trns
+								<MdArrowDropDown />
+							</a>
+							<ul className="sub-menu">
+								<li>
+									<a href="#">Goods Receiving</a>
+								</li>
+								<li>
+									<a href="#">Installations</a>
+								</li>
+								<li>
+									<a href="#">Comissioning</a>
+								</li>
+								<li>
+									<a href="#">Decomissioning</a>
+								</li>
+								<li>
+									<a href="#">Disconnection</a>
+								</li>
+								<li>
+									<a href="#">Reconnection</a>
+								</li>
+								<li>
+									<a href="#">Audit/Inspection</a>
+								</li>
+								<li>
+									<a href="#">Vending</a>
+								</li>
+								<li>
+									<a href="#">Missing</a>
+								</li>
+								<li>
+									<a href="#">Found</a>
+								</li>
+								<li>
+									<a href="#">Back To Supplier</a>
+								</li>
+							</ul>
+						</li>
+						{/* Erfs */}
+						<li>
+							<a href="#">Erfs</a>
+						</li>
+						{/* Body of Knowledge (Bok) */}
+						<li>
+							<a href="#">Bok</a>
+						</li>
+						{/* Admin */}
+						<li>
+							<a href="#">
+								Admin
+								<MdArrowDropDown />
+							</a>
+							<ul className="sub-menu">
+								<li>
+									<a href="#">Users</a>
 								</li>
 								<li>
 									<a href="#">
-										Lunch
+										System Tables
 										<MdArrowDropDown />
 									</a>
 									<ul className="sub-menu">
 										<li>
-											<a href="#">Food</a>
+											<a href="#">User Roles</a>
 										</li>
 										<li>
-											<a href="#">Food</a>
+											<a href="#">Assets States</a>
 										</li>
 										<li>
-											<a href="#">
-												More ...
-												<MdArrowDropDown />
-											</a>
-											<ul className="sub-menu">
-												<li>
-													<a href="#">Food</a>
-												</li>
-												<li>
-													<a href="#">Food</a>
-												</li>
-												<li>
-													<a href="#">Food</a>
-												</li>
-											</ul>
+											<a href="#">Transaction States</a>
 										</li>
 									</ul>
 								</li>
 								<li>
-									<a href="#">Breakfast</a>
+									<a href="#">Mobile Devices</a>
 								</li>
 								<li>
-									<a href="#">Breakfast</a>
+									<a href="#">Simcards</a>
 								</li>
 							</ul>
-						</li>
-						<li>
-							<a href="#">Our Cheffs</a>
-						</li>
-						<li>
-							<a href="#">Gallery</a>
-						</li>
-						<li>
-							<a href="#">Blog</a>
-						</li>
-						<li>
-							<a href="#">Contact Us</a>
-						</li>
+						</li>{" "}
 						<li className="btn  move-right">
-							<a href="#">Book a table</a>
+							<a href="#">FK</a>
+
+							<ul className="sub-menu">
+								<li>
+									<a href="#">Profile</a>
+								</li>
+
+								<li>
+									<a href="#">Sign Out</a>
+								</li>
+							</ul>
 						</li>
 					</ul>
 					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>
