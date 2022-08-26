@@ -6,6 +6,7 @@ import { dataUnp } from "../menuData/dataMenuUnp";
 import { dataTrns } from "../menuData/dataMenuTrns";
 import { dataAsts } from "../menuData/dataMenuAsts";
 import { dataAdmin } from "../menuData/dataMenuAdmin";
+import { dataDbd } from "../menuData/dataMenuDbd";
 
 const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
 	return (
@@ -14,7 +15,7 @@ const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
 			onClick={() => setMenuStatus(true)}
 		>
 			{/* Dashboard */}
-			<MenuBlock menuData={dataAsts} />
+			<MenuBlock menuData={dataDbd} />
 			{/* Assets */}
 			<MenuBlock menuData={dataAsts} />
 			{/* Transactions */}

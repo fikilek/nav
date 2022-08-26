@@ -3,6 +3,7 @@
 
 :root {
   --logo-height: 5rem;
+  --header-height: 6rem;
 }
 
 *,
@@ -16,7 +17,7 @@
 html {
 	font-family: "Robonto", sans-serif;
 	font-size: 10px;
-	background-color: #191919;
+	/* background-color: #191919; */
 }
 
 body {
@@ -33,9 +34,20 @@ ul {
 
 header {
 	width: 100%;
+  height: var(--header-height);
 	position: absolute;
 	top: 0;
 	left: 0;
+  border-bottom: 1px solid;
+}
+
+.pages {
+	height: calc(100vh - var(--header-height));
+  width: 100%;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  border: 1px solid lightgrey;
 }
 
 .continer {
@@ -46,7 +58,7 @@ header {
 }
 
 .menu-icons {
-	color: #eee;
+	/* color: #eee; */
 	font-size: 4rem;
 	position: absolute;
 	top: 50%;
@@ -79,7 +91,7 @@ nav {
 .logo svg {
 	margin: auto;
 	font-size: 3rem;
-	color: #eee;
+	/* color: #eee; */
 }
 
 .nav-list {
@@ -99,7 +111,7 @@ nav {
 
 .nav-list a {
 	display: block;
-	color: #eee;
+	/* color: #eee; */
 	padding: 0 1.5rem;
 	font-size: 1.4rem;
 	text-transform: uppercase;
@@ -139,7 +151,7 @@ li.move-right a:hover {
 	display: block;
 	position: absolute;
 	border-top: 3px solid#eb3007;
-	background-color: #191919;
+	/* background-color: #191919; */
 	z-index: 100;
 	top: 8rem;
 	opacity: 0;
@@ -200,6 +212,40 @@ li.move-right {
 	margin: auto 2rem auto auto;
 }
 
+
+.assets,
+.home,
+.user,
+.user-updated,
+.no-page-found,
+.users,
+.dbd,
+.asts,
+.trns,
+.erfs,
+.bok,
+.admin,
+.unp, .signup, .signin, .signout  {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid;
+	width: 100%;
+	height: 100%;
+}
+
+.user-updated,
+.user,
+.no-page-found,
+.asts,
+.trns,
+.admin {
+	flex-direction: column;
+}
+
+
+
+
 @media screen and (max-width: 850px) {
 	.nav-list {
 		position: fixed;
@@ -208,7 +254,7 @@ li.move-right {
 		height: 100vh;
 		flex-direction: column;
 		align-items: initial;
-		/* background-color: #ddf4df; */
+		background-color: #e3e3e3ca;
 		z-index: 1000;
 		color: rgb(18, 18, 18);
     display: none;
@@ -249,4 +295,9 @@ li.move-right {
 	.show {
     display: block;
 	}
+
+  li.btn.move-right {
+    width: 10rem;
+    height: 4rem;
+}
 }

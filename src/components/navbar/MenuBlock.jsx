@@ -2,7 +2,6 @@ import React from 'react'
 import {NavLink} from 'react-router-dom'
 
 const MenuBlock = ({menuData, classes}) => {
-	console.log(menuData);
   return (
     menuData && menuData.map(item => (
       <li key={item.to} className={classes} >

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { FaRubleSign } from "react-icons/fa";
 import "./header.css";
@@ -6,9 +6,14 @@ import { NavLink } from "react-router-dom";
 import SignedInMenu from "../../components/navbar/signedIn/SignedInMenu";
 import SignedOutMenu from "../../components/navbar/signedOot/SignedOutMenu";
 
-const Header = () => {
+const Header = ({ loggedOn }) => {
 	const [menuStatus, setMenuStatus] = useState(true);
 	const [signedOn, setSignedOn] = useState(false);
+
+	useEffect(() => {
+		setSignedOn(loggedOn);
+	}, [loggedOn]);
+
 	return (
 		<header>
 			<div className="container">
