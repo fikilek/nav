@@ -116,6 +116,10 @@ li.move-right a:hover {
   border: none;
 }
 
+.expand {
+  flex: 1;
+}
+
 .btn {
 	/* padding: 0.1rem; */
 	display: inline-block;
