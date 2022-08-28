@@ -1,0 +1,18 @@
+.modal-container {
+  width: 100%;
+  height: 100%;
+  /* background-color: rgba(221, 219, 219, 0.361); */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.showModal {
+	display: block;
+}
+.hideModal {
+	display: none;
+}

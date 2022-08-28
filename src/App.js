@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
 import "./App.css";
@@ -17,83 +17,92 @@ import Signup from "./pages/signup/Signup";
 import Signin from "./pages/signin/Signin";
 import Signout from "./pages/signout/Signout";
 import NoPageFound from "./pages/errors/NoPageFound";
+import Modal from "./components/modals/Modal";
+
+// import Modal Context
+import ModalContextProvider from './contexts/ModalContext.js'
 
 function App() {
 	const [loggedOn, setLoggedOn] = useState(true);
+
+	
+
 	return (
-		<div className="App">
-			<BrowserRouter>
-				<Header loggedOn={loggedOn} />
+		<ModalContextProvider>
+			<div className="App">
+				<BrowserRouter>
+					<Header loggedOn={loggedOn} />
 
-				<div className="pages">
-					<Routes>
-						{/* home route. this is open ireps. user is not logged in */}
-						<Route path="/" element={<Home />} />
+					<div className="pages">
+						<Routes>
+							{/* home route. this is open ireps. user is not logged in */}
+							<Route path="/" element={<Home />} />
 
-						{/* dashboard section -----------------------------------------------------*/}
-						{/* path to dashboard main page [ml1 = dbd] */}
-						<Route path="/dbd" element={<Dbd />}>
-							{/* ml2 = 'asts' or 'trns' or 'unps' */}
-							<Route path=":ml2" element={<Dbd />} />
-						</Route>
-
-						{/* assets section -----------------------------------------------------*/}
-						{/* path to assets main page [ml1 = asts] */}
-						<Route path="/asts" element={<Asts />}>
-							{/* ml2 = 'vtcts' or 'trfs'[transformers] or 'fds'[feeders] or 'pls'[ploes] or 'bxs'[boxes] or 'ems'[electricity meters] or 'cbs'[circuit breakers] or sls[seals] */}
-							<Route path=":ml2" element={<Asts />} />
-						</Route>
-
-						{/* transactions section -----------------------------------------------------*/}
-						{/* path to assets main page [ml1 = trns] */}
-						<Route path="/trns" element={<Trns />}>
-							{/* ml2 = 'grv' or 'inst'[installation] or 'com'[comissioning] or 'dcn'[disconnection] or 'rcn'[reconnection] or 'aud'[audits] or 'vnd'[vending] or mis[missing] or fnd[found] or ret[returned] or dcm[decomissioned] */}
-							<Route path=":ml2" element={<Trns />} />
-						</Route>
-
-						{/* erfs section -----------------------------------------------------*/}
-						{/* path to assets main page [ml1 = erfs] */}
-						<Route path="/erfs" element={<Erfs />}></Route>
-
-						{/* body of knowledge section -----------------------------------------------------*/}
-						{/* path to assets bok page [ml1 = bok] */}
-						<Route path="/bok" element={<Bok />}></Route>
-
-						{/* admin section -----------------------------------------------------*/}
-						{/* path to admin main page [ml1 = admin] */}
-						<Route path="/admin" element={<Admin />}>
-							{/* ml2 = 'sytt'[system tables] or 'unps'[users] or 'mdvs'[mobile devices] or 'sics'[sim cards] or erfs[ervens] */}
-							<Route path=":ml2" element={<Admin />}>
-								<Route path=":ml3" element={<Admin />} />
+							{/* dashboard section -----------------------------------------------------*/}
+							{/* path to dashboard main page [ml1 = dbd] */}
+							<Route path="/dbd" element={<Dbd />}>
+								{/* ml2 = 'asts' or 'trns' or 'unps' */}
+								<Route path=":ml2" element={<Dbd />} />
 							</Route>
-						</Route>
 
-						{/* TODO: Attend to the issue of displaying Unp for a signedin user */}
-						{/* unp section (signedin user)-----------------------------------------------------*/}
-						{/* path to unp main page [ml1 = unp] */}
-						<Route path="/unp" element={<Unp />}>
-							{/* ml2 = ''[] or ''[] or ''[] or ''[] */}
-							<Route path=":ml2" element={<Unp />} />
-						</Route>
+							{/* assets section -----------------------------------------------------*/}
+							{/* path to assets main page [ml1 = asts] */}
+							<Route path="/asts" element={<Asts />}>
+								{/* ml2 = 'vtcts' or 'trfs'[transformers] or 'fds'[feeders] or 'pls'[ploes] or 'bxs'[boxes] or 'ems'[electricity meters] or 'cbs'[circuit breakers] or sls[seals] */}
+								<Route path=":ml2" element={<Asts />} />
+							</Route>
 
-						{/* signup section -----------------------------------------------------*/}
-						{/* path to signup main page [ml1 = signup] */}
-						<Route path="/signup" element={<Signup />} />
+							{/* transactions section -----------------------------------------------------*/}
+							{/* path to assets main page [ml1 = trns] */}
+							<Route path="/trns" element={<Trns />}>
+								{/* ml2 = 'grv' or 'inst'[installation] or 'com'[comissioning] or 'dcn'[disconnection] or 'rcn'[reconnection] or 'aud'[audits] or 'vnd'[vending] or mis[missing] or fnd[found] or ret[returned] or dcm[decomissioned] */}
+								<Route path=":ml2" element={<Trns />} />
+							</Route>
 
-						{/* signin section -----------------------------------------------------*/}
-						{/* path to signin main page [ml1 = signin] */}
-						<Route path="/signin" element={<Signin setLoggedOn={setLoggedOn} />} />
+							{/* erfs section -----------------------------------------------------*/}
+							{/* path to assets main page [ml1 = erfs] */}
+							<Route path="/erfs" element={<Erfs />}></Route>
 
-						{/* signout section -----------------------------------------------------*/}
-						{/* path to signout main page [ml1 = signout] */}
-						<Route path="/signout" element={<Signout setLoggedOn={setLoggedOn} />} />
+							{/* body of knowledge section -----------------------------------------------------*/}
+							{/* path to assets bok page [ml1 = bok] */}
+							<Route path="/bok" element={<Bok />}></Route>
 
-						<Route path="*" element={<NoPageFound />} />
-					</Routes>
-				</div>
+							{/* admin section -----------------------------------------------------*/}
+							{/* path to admin main page [ml1 = admin] */}
+							<Route path="/admin" element={<Admin />}>
+								{/* ml2 = 'sytt'[system tables] or 'unps'[users] or 'mdvs'[mobile devices] or 'sics'[sim cards] or erfs[ervens] */}
+								<Route path=":ml2" element={<Admin />}>
+									<Route path=":ml3" element={<Admin />} />
+								</Route>
+							</Route>
 
-			</BrowserRouter>
-		</div>
+							{/* TODO: Attend to the issue of displaying Unp for a signedin user */}
+							{/* unp section (signedin user)-----------------------------------------------------*/}
+							{/* path to unp main page [ml1 = unp] */}
+							<Route path="/unp" element={<Unp />}>
+								{/* ml2 = ''[] or ''[] or ''[] or ''[] */}
+								<Route path=":ml2" element={<Unp />} />
+							</Route>
+
+							{/* signup section -----------------------------------------------------*/}
+							{/* path to signup main page [ml1 = signup] */}
+							{/* <Route path="/signup" element={<Signup />} /> */}
+
+							{/* signin section -----------------------------------------------------*/}
+							{/* path to signin main page [ml1 = signin] */}
+							{/* <Route path="/signin" element={<Signin setLoggedOn={setLoggedOn} />} /> */}
+
+							{/* signout section -----------------------------------------------------*/}
+							{/* path to signout main page [ml1 = signout] */}
+							<Route path="/signout" element={<Signout setLoggedOn={setLoggedOn} />} />
+
+							<Route path="*" element={<NoPageFound />} />
+						</Routes>
+						<Modal />
+					</div>
+				</BrowserRouter>
+			</div>
+		</ModalContextProvider>
 	);
 }
 

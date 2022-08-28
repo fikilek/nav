@@ -1,8 +1,9 @@
 import React from 'react'
+import './bok.css'
 
 const Bok = () => {
   return (
-    <div className='bok' >Bok</div>
+    <div className='bok' >My Bok</div>
   )
 }
 

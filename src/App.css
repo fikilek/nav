@@ -2,8 +2,8 @@
 /* TODO: Split css code imnto own components */
 
 :root {
-  --logo-height: 5rem;
-  --header-height: 6rem;
+	--logo-height: 5rem;
+	--header-height: 6rem;
 }
 
 *,
@@ -34,20 +34,20 @@ ul {
 
 header {
 	width: 100%;
-  height: var(--header-height);
+	height: var(--header-height);
 	position: absolute;
 	top: 0;
 	left: 0;
-  border-bottom: 1px solid;
+	border-bottom: 1px solid;
 }
 
 .pages {
 	height: calc(100vh - var(--header-height));
-  width: 100%;
-  position: absolute;
-  top: var(--header-height);
-  left: 0;
-  border: 1px solid lightgrey;
+	width: 100%;
+	position: absolute;
+	top: var(--header-height);
+	left: 0;
+	border: 1px solid lightgrey;
 }
 
 .continer {
@@ -83,7 +83,7 @@ nav {
 	background-color: #eb3007;
 	display: flex;
 	align-items: center;
-  justify-content: center;
+	justify-content: center;
 	border-radius: 100%;
 	margin-right: 5rem;
 }
@@ -125,11 +125,11 @@ nav {
 }
 
 li.move-right a:hover {
-  border: none;
+	border: none;
 }
 
 .expand {
-  flex: 1;
+	flex: 1;
 }
 
 .btn {
@@ -169,7 +169,7 @@ li.move-right a:hover {
 }
 
 li.move-right .sub-menu::before {
-	left:80%;
+	left: 80%;
 }
 
 .sub-menu .sub-menu::before {
@@ -193,12 +193,12 @@ li.move-right .sub-menu::before {
 }
 
 .nav-list li.move-right > .sub-menu {
-  right: 0;
+	right: 0;
 }
 
 .nav-list li.move-right:hover > .sub-menu {
 	top: 5rem;
-  right: 0;
+	right: 0;
 	opacity: 1;
 	visibility: visible;
 }
@@ -212,7 +212,6 @@ li.move-right {
 	margin: auto 2rem auto auto;
 }
 
-
 .assets,
 .home,
 .user,
@@ -225,7 +224,10 @@ li.move-right {
 .erfs,
 .bok,
 .admin,
-.unp, .signup, .signin, .signout  {
+.unp,
+.signup,
+.signin,
+.signout {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -245,11 +247,10 @@ li.move-right {
 
 
 
-
 @media screen and (max-width: 850px) {
 	.nav-list {
 		position: fixed;
-		top: 5rem;
+		top: var(--header-height);
 		left: 0;
 		height: 100vh;
 		flex-direction: column;
@@ -257,8 +258,8 @@ li.move-right {
 		background-color: #e3e3e3ca;
 		z-index: 1000;
 		color: rgb(18, 18, 18);
-    display: none;
-    overflow-y: scroll;
+		display: none;
+		overflow-y: scroll;
 	}
 
 	.nav-list > li {
@@ -293,11 +294,11 @@ li.move-right {
 	}
 
 	.show {
-    display: block;
+		display: block;
 	}
 
-  li.btn.move-right {
-    width: 10rem;
-    height: 4rem;
-}
+	li.btn.move-right {
+		width: 10rem;
+		height: 4rem;
+	}
 }

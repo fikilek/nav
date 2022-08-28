@@ -5,9 +5,10 @@ import "./header.css";
 import { NavLink } from "react-router-dom";
 import SignedInMenu from "../../components/navbar/signedIn/SignedInMenu";
 import SignedOutMenu from "../../components/navbar/signedOot/SignedOutMenu";
+import Modal from "../../components/modals/Modal";
 
 const Header = ({ loggedOn }) => {
-	const [menuStatus, setMenuStatus] = useState(true);
+	const [menuStatus, setMenuStatus] = useState(false);
 	const [signedOn, setSignedOn] = useState(false);
 
 	useEffect(() => {
@@ -23,13 +24,11 @@ const Header = ({ loggedOn }) => {
 							<FaRubleSign />
 						</NavLink>
 					</div>
-					{/* <div> */}
 					{signedOn ? (
 						<SignedInMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
 					) : (
 						<SignedOutMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
 					)}
-					{/* </div> */}
 
 					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>
 						{menuStatus ? <MdMenu /> : <MdClose />}
