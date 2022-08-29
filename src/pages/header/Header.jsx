@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { MdClose, MdMenu } from "react-icons/md";
 import { FaRubleSign } from "react-icons/fa";
 import "./header.css";
 import { NavLink } from "react-router-dom";
 import SignedInMenu from "../../components/navbar/signedIn/SignedInMenu";
-import SignedOutMenu from "../../components/navbar/signedOot/SignedOutMenu";
+import SignedOutMenu from "../../components/navbar/signedOut/SignedOutMenu";
 import Modal from "../../components/modals/Modal";
+import { UserContext } from "../../contexts/UserContext";
 
-const Header = ({ loggedOn }) => {
+const Header = () => {
 	const [menuStatus, setMenuStatus] = useState(false);
 	const [signedOn, setSignedOn] = useState(false);
 
+	const { user } = useContext(UserContext);
+	console.log(`user`, user);
+
 	useEffect(() => {
-		setSignedOn(loggedOn);
-	}, [loggedOn]);
+		setSignedOn(user.signedon);
+	}, [user.signedon]);
 
 	return (
 		<header>

@@ -2,14 +2,12 @@ import React, { useContext, useEffect } from "react";
 import MenuBlock from "../MenuBlock";
 import { dataBok } from "../menuData/dataMenuBox";
 import { dataErfs } from "../menuData/dataMenuErfs";
-import { dataSignIn } from "../menuData/dataMenuSignIn";
-// import { dataSignUp } from "../menuData/dataMenuSignUp";
 import { ModalContext } from "../../../contexts/ModalContext";
 
 const SignedOutMenu = ({ menuStatus, setMenuStatus }) => {
 	const { setWindowToOpen } = useContext(ModalContext);
 	const handleClick = e => {
-		setWindowToOpen(e.target.innerHTML);
+		setWindowToOpen(e.target.id);
 	};
 
 	return (
@@ -21,14 +19,14 @@ const SignedOutMenu = ({ menuStatus, setMenuStatus }) => {
 			{/* Sign up */}
 			{/* <MenuBlock menuData={dataSignUp} classes={"btn  move-right"} /> */}
 			<li className="btn  move-right">
-				<a href="#" onClick={handleClick}>
+				<a href="#" onClick={handleClick} id='signup'>
 					Sign up
 				</a>
 			</li>
 			{/* Sign in */}
 			{/* <MenuBlock menuData={dataSignIn} classes={"btn  move-right"} /> */}
 			<li className="btn  move-right">
-				<a href="#" onClick={handleClick}>
+				<a href="#" onClick={handleClick} id='signin'>
 					Sign in
 				</a>
 			</li>
