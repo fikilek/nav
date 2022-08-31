@@ -6,41 +6,82 @@ import {
 	FaLinkedinIn,
 	FaTwitter,
 	FaUser,
+	FaVoicemail,
 } from "react-icons/fa";
-import { MdPassword } from "react-icons/md";
+import { MdEmail, MdPassword } from "react-icons/md";
+import irepsImage2 from "../../images/irepsImage1.jpg";
 
 const Signin = () => {
+	const [show, setShow] = useState(true);
 	return (
 		<div className="signin-container">
-			<div className="signin-header"></div>
+			{/* signin header */}
+			<div className="signin-header">
+				<img src={irepsImage2} alt="ireps signin images" className="signin-img" />
+			</div>
 
-			<form className="signin-form">
-				<div className="form-field form-field-email">
-					<span className="form-field-icon">
-						<FaUser />
-					</span>
-					<input type="email" name="email" id="email" placeholder="email" />
+			<div className="forms">
+				<div className={`form-signin  ${show ? "signin-show" : "signin-hide"}  `}>
+					{/* Signin form */}
+					<form className={`signin-form  `}>
+						<div className="form-field form-field-email">
+							<span className="form-field-icon">
+								<MdEmail />
+							</span>
+							<input type="email" name="email" id="email" placeholder="email" />
+						</div>
+						<div className="form-field form-field-password">
+							<span className="form-field-icon">
+								<MdPassword />
+							</span>
+							<input type="password" name="password" id="pwd" placeholder="Password" />
+						</div>
+						<div className="form-btns">
+							<button className="form-btn Clear">Clear</button>
+							<button className="form-btn reset">Reset</button>
+							<button className="form-btn submit">Submit</button>
+						</div>{" "}
+						<div className="signin-footer">
+							<div className="signin-footer-fpw">
+								<a href="#" onClick={e => setShow(false)}>
+									Forgot password?
+								</a>
+							</div>
+							<div className="signin-footer-signup">
+								<a href="#">Sign up</a>
+							</div>
+						</div>
+					</form>
 				</div>
-				<div className="form-field form-field-password">
-					<span className="form-field-icon">
-						<MdPassword />
-					</span>
-					<input type="password" name="password" id="pwd" placeholder="Password" />
+				{/* <div className="form-fpw "> */}
+				<div className={`form-fwp  ${show ? "signin-hide" : "signin-show"} `}>
+					{/* Forgotten ppwd form */}
+					<form className="fpw-form">
+						<div className="form-field form-field-email">
+							{/* email fiels */}
+							<span className="form-field-icon">
+								<FaUser />
+							</span>
+							<input type="email" name="email" id="email" placeholder="email" />
+						</div>
+						<div className="form-btns">
+							<button className="form-btn Clear">Clear</button>
+							<button className="form-btn reset">Reset</button>
+							<button className="form-btn submit">Submit</button>
+						</div>{" "}
+						<div className="signin-footer">
+							<div className="signin-footer-fpw">
+								<a href="#" onClick={e => setShow(true)}>
+									Remembered password?
+								</a>
+							</div>
+							<div className="signin-footer-signup">
+								<a href="#">Sign up</a>
+							</div>
+						</div>
+					</form>
 				</div>
-				<div className="form-btns">
-					<button className="form-btn Clear">Clear</button>
-					<button className="form-btn reset">Reset</button>
-					<button className="form-btn submit">Submit</button>
-				</div>{" "}
-				<div className="signin-footer">
-					<div className="signin-footer-fpw">
-						<a href="#">Forget password?</a>
-					</div>
-					<div className="signin-footer-signup">
-						<a href="#">Sign up</a>
-					</div>
-				</div>
-			</form>
+			</div>
 		</div>
 	);
 };

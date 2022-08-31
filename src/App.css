@@ -293,9 +293,9 @@ li.move-right {
 		display: block;
 	}
 
-	.show {
+	/* .show {
 		display: block;
-	}
+	} */
 
 	li.btn.move-right {
 		width: 10rem;

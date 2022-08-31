@@ -5,7 +5,7 @@
 .modal-container {
 	width: 100vw;
 	height: calc(99.5vh - var(--header-height));
-	background-color: rgba(234, 234, 234, 0.904);
+	background-color: hsla(0, 0%, 98%, 0.881);
 	position: absolute;
 	top: 0;
 	right: 0;
