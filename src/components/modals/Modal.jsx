@@ -7,8 +7,7 @@ import Signup from "../../pages/signup/Signup";
 import "./modal.css";
 
 const Modal = () => {
-	const [open, setOpen] = useState(false);
-	const { windowToOpen, setWindowToOpen } = useContext(ModalContext);
+	const { windowToOpen, setWindowToOpen, open, setOpen } = useContext(ModalContext);
 	// const user = useContext(UserContext);
 	// console.log(`user`, user);
 
@@ -27,9 +26,9 @@ const Modal = () => {
 
 	return (
 		<div
-			className={open ? "modal-container showModal" : "modal-container hideModal"}
+			className={open ? "modal-container modal-showModal" : "modal-container modal-hideModal"}
 		>
-			<div className="container">
+			<div className="modal-background">
 				<div className="modal-payload">
 					<div className="modal-header">
 						<div className="modal-name">{windowToOpen} Modal</div>
@@ -39,8 +38,8 @@ const Modal = () => {
 					</div>
 
 					<div className="modal-body">
-						<div>{windowToOpen === "signin" ? <Signin /> : ""}</div>
-						<div>{windowToOpen === "signup" ? <Signup /> : ""}</div>
+						<>{windowToOpen === "signin" ? <Signin /> : ""}</>
+						{/* <>{windowToOpen === "signup" ? <Signup /> : ""}</> */}
 					</div>
 
 					<div className="modal-footer"></div>

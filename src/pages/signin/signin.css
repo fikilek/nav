@@ -1,0 +1,113 @@
+/* Importing fonts from Google */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+
+/* Reseting */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Poppins", sans-serif;
+}
+
+.signin-container {
+	max-width: 400px;
+	/* min-height: 500px; */
+	margin: 80px auto;
+	/* padding: 40px 30px 30px 30px; */
+	background-color: #ecf0f3;
+	border-radius: 2rem;
+	box-shadow: 13px 13px 20px #cbced1, -13px -13px 20px #fff;
+	/* width: 100%; */
+	/* outline: 1px solid red; */
+	font-size: 1.5rem;
+	/* color: #666; */
+	/* padding: 10px 15px 10px 10px; */
+}
+
+.signin-header {
+}
+
+.signin-form {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: auto;
+	gap: 2rem;
+}
+
+.form-field {
+	display: grid;
+	grid-template-columns: 10% 90%;
+	grid-template-rows: 1fr;
+	height: 4rem;
+	border-radius: 1.2rem;
+	box-shadow: inset 8px 8px 8px #cbced1, inset -8px -8px 8px #fff;
+}
+
+.form-field-icon {
+	justify-content: center;
+	align-self: center;
+	margin: auto;
+}
+
+.form-field-email {
+	margin: 2rem 2rem 0 2rem;
+}
+
+.form-field-password {
+	margin: 0 2rem;
+}
+
+.form-btns {
+	margin: 0 2rem 2rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.form-btn {
+	width: 30%;
+	height: 4rem;
+}
+
+.form-field input {
+	border-radius: 0 1.2rem 1.2rem 0;
+	border: none;
+	padding-left: 2rem;
+}
+.signin-container .form-field .fas {
+	color: #555;
+}
+
+.form-btns {
+}
+
+.form-btn {
+	background-color: #bbdeef;
+	color: rgb(71, 71, 71);
+	border-radius: 1.5rem;
+	box-shadow: 3px 3px 3px #b1b1b1, -3px -3px 3px #fff;
+	letter-spacing: 1.3px;
+}
+
+.signin-container .form-btn:hover {
+	background-color: #9cd9f8;
+}
+
+.signin-footer {
+	display: flex;
+	justify-content: space-evenly;
+	margin: 0 2rem 2rem 2rem;
+}
+
+.signin-footer a {
+	background-color: #bbdeef;
+	padding: 0.4rem 2rem;
+	border-radius: 2rem;
+}
+
+@media (max-width: 380px) {
+	.signin-container {
+		margin: 30px 20px;
+		padding: 40px 15px 15px 15px;
+	}
+}

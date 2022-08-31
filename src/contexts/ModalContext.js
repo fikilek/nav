@@ -9,9 +9,10 @@ export const ModalContext = createContext();
 const ModalContextProvider = (props) => {
 	// console.log(`props`, props);
 	const [windowToOpen, setWindowToOpen] = useState("intit value");
+	const [open, setOpen] = useState(false);
 	// console.log(`windowToOpen`, windowToOpen);
 	return (
-		<ModalContext.Provider value={{ windowToOpen, setWindowToOpen }}>
+		<ModalContext.Provider value={{ windowToOpen, setWindowToOpen, open, setOpen }}>
 			{props.children}
 		</ModalContext.Provider>
 	);
