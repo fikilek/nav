@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./signin.css";
 import {
 	FaFacebookF,
@@ -10,9 +10,17 @@ import {
 } from "react-icons/fa";
 import { MdEmail, MdPassword } from "react-icons/md";
 import irepsImage2 from "../../images/irepsImage1.jpg";
+import { ModalContext } from "../../contexts/ModalContext";
 
 const Signin = () => {
 	const [show, setShow] = useState(true);
+	const { setWindowToOpen, setOpen } =
+		useContext(ModalContext);
+
+	const handleModalCloseBtn = e => {
+		setOpen(false);
+		setWindowToOpen("");
+	};
 	return (
 		<div className="signin-container">
 			{/* signin header */}
@@ -21,14 +29,14 @@ const Signin = () => {
 					<h1 className="signin-header-title">Sign in</h1>
 					<img src={irepsImage2} alt="ireps signin images" className="signin-img" />
 				</div>
-				<div className="signin-header-close-btn">
-					<div className="btn-div">
+				<div className="signin-header-close-btn" onClick={handleModalCloseBtn}>
+					<div className="btn-div" id="btn-div">
 						<button>X</button>
 					</div>
 				</div>
 			</div>
 
-			<div className="forms">
+			<div className="forms" id="forms">
 				<div className={`form-signin  ${show ? "signin-show" : "signin-hide"}  `}>
 					{/* Signin form */}
 					<form className={`signin-form  `}>
@@ -36,7 +44,12 @@ const Signin = () => {
 							<span className="form-field-icon">
 								<MdEmail />
 							</span>
-							<input type="email" name="email" id="email" placeholder="email" />
+							<input
+								type="forgotten-pwd-email"
+								name="forgotten-pwd-email"
+								id="forgotten-pwd-email"
+								placeholder="email"
+							/>
 						</div>
 						<div className="form-field form-field-password">
 							<span className="form-field-icon">

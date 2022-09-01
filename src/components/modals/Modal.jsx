@@ -7,7 +7,8 @@ import Signup from "../../pages/signup/Signup";
 import "./modal.css";
 
 const Modal = () => {
-	const { windowToOpen, setWindowToOpen, open, setOpen } = useContext(ModalContext);
+	const { windowToOpen, setWindowToOpen, open, setOpen } =
+		useContext(ModalContext);
 	// const user = useContext(UserContext);
 	// console.log(`user`, user);
 
@@ -17,21 +18,30 @@ const Modal = () => {
 		} else {
 			setOpen(false);
 		}
-	}, [windowToOpen]);
+	}, [windowToOpen, setOpen]);
 
 	const handleClick = e => {
-		setOpen(false);
-		setWindowToOpen("");
+		console.log(`modal background clicked`, e.target.id);
+		if (e.target.id === "modal-background") {
+			setOpen(false);
+			setWindowToOpen("");
+		}
 	};
 
 	return (
 		<div
-			className={open ? "modal-container modal-showModal" : "modal-container modal-hideModal"}
+			className={
+				open ? "modal-container modal-showModal" : "modal-container modal-hideModal"
+			}
 		>
-			<div className="modal-background">
+			<div
+				className="modal-background"
+				id="modal-background"
+				onClick={handleClick}
+			>
 				<div className="modal-payload">
 					{/* <div className="modal-header"> */}
-						{/* <div className="modal-name">{windowToOpen} Modal</div>
+					{/* <div className="modal-name">{windowToOpen} Modal</div>
 						<button className="modal-name-btn" onClick={handleClick}>
 							<MdClose />
 						</button> */}

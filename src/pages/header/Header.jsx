@@ -11,9 +11,8 @@ import { UserContext } from "../../contexts/UserContext";
 const Header = () => {
 	const [menuStatus, setMenuStatus] = useState(false);
 	const [signedOn, setSignedOn] = useState(false);
-
 	const { user } = useContext(UserContext);
-	console.log(`user`, user);
+	console.log(`menuStatus`, menuStatus);
 
 	useEffect(() => {
 		setSignedOn(user.signedon);
@@ -35,7 +34,7 @@ const Header = () => {
 					)}
 
 					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>
-						{menuStatus ? <MdMenu /> : <MdClose />}
+						{menuStatus ?  <MdClose /> : <MdMenu />}
 					</div>
 				</nav>
 			</div>
