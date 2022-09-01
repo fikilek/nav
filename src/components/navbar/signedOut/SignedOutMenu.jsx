@@ -13,11 +13,11 @@ const SignedOutMenu = ({ menuStatus, setMenuStatus }) => {
 	};
 
 	const handleClickOnNavList = e => {
-		console.log(`nav-list clicked : menuStatus : ${menuStatus}` )
+		// console.log(`nav-list clicked : menuStatus : ${menuStatus}` )
 		if (menuStatus) {
-			console.log(`about to change menyStatus`)
+			// console.log(`about to change menyStatus`)
 			setMenuStatus(false)
-			console.log(`menuStatus changed to : ${menuStatus}`)
+			// console.log(`menuStatus changed to : ${menuStatus}`)
 		} 
 	} 
 

@@ -226,8 +226,7 @@ li.move-right {
 .admin,
 .unp,
 .signup,
-.signin,
-.signout {
+.signin {
 	display: flex;
 	justify-content: center;
 	align-items: center;

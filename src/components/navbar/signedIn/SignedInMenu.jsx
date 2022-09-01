@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import MenuBlock from "../MenuBlock";
 import { dataBok } from "../menuData/dataMenuBox";
 import { dataErfs } from "../menuData/dataMenuErfs";
@@ -7,8 +7,16 @@ import { dataTrns } from "../menuData/dataMenuTrns";
 import { dataAsts } from "../menuData/dataMenuAsts";
 import { dataAdmin } from "../menuData/dataMenuAdmin";
 import { dataDbd } from "../menuData/dataMenuDbd";
+import { NavLink } from "react-router-dom";
+import { ModalContext } from "../../../contexts/ModalContext";
 
 const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
+	const { setWindowToOpen, setOpen } = useContext(ModalContext);
+
+	const handleClick = e => {
+		setWindowToOpen(e.target.id);
+		setOpen(true);
+	};
 	return (
 		<ul
 			className={`nav-list ${menuStatus ? "" : "show"}`}
@@ -27,7 +35,20 @@ const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
 			{/* Admin */}
 			<MenuBlock menuData={dataAdmin} />
 			{/* Unp */}
-			<MenuBlock menuData={dataUnp} classes={"btn  move-right"} />
+			<li className="btn  move-right">
+				<NavLink to="/unp">FK</NavLink>
+				<ul className="sub-menu">
+					<li>
+						<NavLink to="/unp/profile">Profile</NavLink>
+					</li>
+
+					<li>
+						<a href="#" onClick={handleClick} id="signout">
+							Sign out
+						</a>
+					</li>
+				</ul>
+			</li>
 		</ul>
 	);
 };

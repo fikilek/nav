@@ -3,6 +3,7 @@ import { MdClose } from "react-icons/md";
 import { ModalContext } from "../../contexts/ModalContext";
 import { UserContext } from "../../contexts/UserContext";
 import Signin from "../../pages/signin/Signin";
+import Signout from "../../pages/signout/Signout";
 import Signup from "../../pages/signup/Signup";
 import "./modal.css";
 
@@ -12,16 +13,16 @@ const Modal = () => {
 	// const user = useContext(UserContext);
 	// console.log(`user`, user);
 
-	useEffect(() => {
-		if (windowToOpen === "signup" || windowToOpen === "signin") {
-			setOpen(true);
-		} else {
-			setOpen(false);
-		}
-	}, [windowToOpen, setOpen]);
+	// useEffect(() => {
+	// 	if (windowToOpen === "signup" || windowToOpen === "signin") {
+	// 		setOpen(true);
+	// 	} else {
+	// 		setOpen(false);
+	// 	}
+	// }, [windowToOpen, setOpen]);
 
 	const handleClick = e => {
-		console.log(`modal background clicked`, e.target.id);
+		// console.log(`modal backgr?ound clicked`, e.target.id);
 		if (e.target.id === "modal-background") {
 			setOpen(false);
 			setWindowToOpen("");
@@ -49,6 +50,7 @@ const Modal = () => {
 
 					<div className="modal-body">
 						<>{windowToOpen === "signin" ? <Signin /> : ""}</>
+						<>{windowToOpen === "signout" ? <Signout /> : ""}</>
 						{/* <>{windowToOpen === "signup" ? <Signup /> : ""}</> */}
 					</div>
 

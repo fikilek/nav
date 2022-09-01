@@ -10,13 +10,8 @@ import { UserContext } from "../../contexts/UserContext";
 
 const Header = () => {
 	const [menuStatus, setMenuStatus] = useState(false);
-	const [signedOn, setSignedOn] = useState(false);
 	const { user } = useContext(UserContext);
-	console.log(`menuStatus`, menuStatus);
-
-	useEffect(() => {
-		setSignedOn(user.signedon);
-	}, [user.signedon]);
+	// console.log(`menuStatus`, menuStatus);
 
 	return (
 		<header>
@@ -27,7 +22,7 @@ const Header = () => {
 							<FaRubleSign />
 						</NavLink>
 					</div>
-					{signedOn ? (
+					{user.signedon ? (
 						<SignedInMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
 					) : (
 						<SignedOutMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />

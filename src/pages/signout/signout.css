@@ -1,0 +1,30 @@
+.signout {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem;
+}
+
+.close-btn {
+  font-size: 5rem;
+  padding: 2rem;
+  margin: 5rem;
+}
+
+.signout-confirm-btns {
+  display: flex;
+}
+
+.signout-confirm-btns button {
+  border-radius: 2rem;
+  z-index: 1000;
+}
+
+.signout-confirm-btns button:hover {
+  border-radius: 3rem;
+  cursor: pointer;
+  transform: scale(1.1);
+  background-color: beige;
+  border: none;
+}

@@ -10,7 +10,7 @@ const userObj = {
 	name: "fikile",
 	email: "fikilekentane@gmail.com",
 	role: "super-user",
-	"signedon": false,
+	signedon: false,
 };
 
 // A "provider" is used to encapsulate only the
