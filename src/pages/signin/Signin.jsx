@@ -17,7 +17,15 @@ const Signin = () => {
 		<div className="signin-container">
 			{/* signin header */}
 			<div className="signin-header">
-				<img src={irepsImage2} alt="ireps signin images" className="signin-img" />
+				<div className="signin-header-title-img">
+					<h1 className="signin-header-title">Sign in</h1>
+					<img src={irepsImage2} alt="ireps signin images" className="signin-img" />
+				</div>
+				<div className="signin-header-close-btn">
+					<div className="btn-div">
+						<button>X</button>
+					</div>
+				</div>
 			</div>
 
 			<div className="forms">

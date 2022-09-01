@@ -30,19 +30,19 @@ const Modal = () => {
 		>
 			<div className="modal-background">
 				<div className="modal-payload">
-					<div className="modal-header">
-						<div className="modal-name">{windowToOpen} Modal</div>
+					{/* <div className="modal-header"> */}
+						{/* <div className="modal-name">{windowToOpen} Modal</div>
 						<button className="modal-name-btn" onClick={handleClick}>
 							<MdClose />
-						</button>
-					</div>
+						</button> */}
+					{/* </div> */}
 
 					<div className="modal-body">
 						<>{windowToOpen === "signin" ? <Signin /> : ""}</>
 						{/* <>{windowToOpen === "signup" ? <Signup /> : ""}</> */}
 					</div>
 
-					<div className="modal-footer"></div>
+					{/* <div className="modal-footer"></div> */}
 				</div>
 			</div>
 		</div>

@@ -1,4 +1,5 @@
 import React from "react";
+import './asts.css'
 import { useParams } from "react-router-dom";
 
 const Asts = () => {

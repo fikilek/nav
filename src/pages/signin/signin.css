@@ -21,7 +21,7 @@
 	/* outline: 1px solid red; */
 	font-size: 1.5rem;
 	/* color: #666; */
-	/* padding: 10px 15px 10px 10px; */
+	padding: 10px 15px 10px 10px;
 }
 
 .form {
@@ -29,11 +29,34 @@
 }
 
 .signin-header {
+	position: relative;
 	display: flex;
-	justify-content: center;
-	margin: 0 auto;
+	justify-content: space-evenly;
+	align-items: center;
 	padding: 2rem 2rem 0 2rem;
 	width: 100%;
+}
+
+.signin-header-title-img {
+	display: flex;
+	justify-content: space-evenly;
+	align-items: center;
+	width: 100%;
+}
+
+.signin-header-close-btn {
+	position: absolute;
+	top: -1rem;
+	right: -1.5rem;
+}
+
+.signin-header-close-btn button {
+	font-size: 3rem;
+	color: #fff;
+	background-color: coral;
+	padding: 0 0.9rem;
+	border-radius: 0 20px 0 0;
+	border: none;
 }
 
 .signin-img {
@@ -142,7 +165,6 @@
 
 .form-signin {
 	display: block;
-
 }
 
 .form-fpw {
@@ -150,9 +172,9 @@
 }
 
 .signin-show {
-  display: block;
+	display: block;
 }
 
 .signin-hide {
-  display: none;
+	display: none;
 }
