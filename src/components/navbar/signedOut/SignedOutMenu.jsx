@@ -1,13 +1,14 @@
 import React, { useContext, useEffect } from "react";
 import MenuBlock from "../MenuBlock";
-import { dataBok } from "../menuData/dataMenuBox";
-import { dataErfs } from "../menuData/dataMenuErfs";
+import { dataBok } from "../../../data/menuData/dataMenuBox";
+import { dataErfs } from "../../../data/menuData/dataMenuErfs";
 import { ModalContext } from "../../../contexts/ModalContext";
 
 const SignedOutMenu = ({ menuStatus, setMenuStatus }) => {
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
 
 	const handleClick = e => {
+		// Open a modal window
 		setWindowToOpen(e.target.id);
 		setOpen(true)
 	};

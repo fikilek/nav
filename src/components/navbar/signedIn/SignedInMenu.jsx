@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
 import MenuBlock from "../MenuBlock";
-import { dataBok } from "../menuData/dataMenuBox";
-import { dataErfs } from "../menuData/dataMenuErfs";
-import { dataUnp } from "../menuData/dataMenuUnp";
-import { dataTrns } from "../menuData/dataMenuTrns";
-import { dataAsts } from "../menuData/dataMenuAsts";
-import { dataAdmin } from "../menuData/dataMenuAdmin";
-import { dataDbd } from "../menuData/dataMenuDbd";
+import { dataBok } from "../../../data/menuData/dataMenuBox";
+import { dataErfs } from "../../../data/menuData/dataMenuErfs";
+import { dataUnp } from "../../../data/menuData/dataMenuUnp";
+import { dataTrns } from "../../../data/menuData/dataMenuTrns";
+import { dataAsts } from "../../../data/menuData/dataMenuAsts";
+import { dataAdmin } from "../../../data/menuData/dataMenuAdmin";
+import { dataDbd } from "../../../data/menuData/dataMenuDbd";
 import { NavLink } from "react-router-dom";
 import { ModalContext } from "../../../contexts/ModalContext";
 

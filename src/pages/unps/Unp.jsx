@@ -1,12 +1,14 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
+import './unp.css';
+import { useParams } from "react-router-dom";
 
 const Unp = () => {
 	const userId = useParams();
 	// console.log(userId);
 	return (
 		<div className="unp">
-			<p>Data for user : {userId.id}</p>
+			<p>Data for user</p>
+			<p>{userId.id}</p>
 		</div>
 	);
 };

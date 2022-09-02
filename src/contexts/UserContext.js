@@ -1,17 +1,8 @@
 import React, { createContext, useState } from "react";
-
+import { userObj } from "../data/signData/signData";
 // Create context:
 // UserContext: to query the context state
 export const UserContext = createContext();
-
-// Create a use object
-const userObj = {
-	surname: "kentane",
-	name: "fikile",
-	email: "fikilekentane@gmail.com",
-	role: "super-user",
-	signedon: false,
-};
 
 // A "provider" is used to encapsulate only the
 // components that needs the state in this context

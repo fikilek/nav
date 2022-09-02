@@ -9,8 +9,9 @@ const Admin = () => {
 	const menuLevel3 = ml3 ? ml3 : ''
 	return (
 		<div className="admin">
+			<p>Admin</p>
 			<p>
-				Admin: <strong> {ml2 ? `${ml2} ${menuLevel3}` : `Main Page`}</strong>
+				<strong> {ml2 ? `${ml2} ${menuLevel3}` : `Main Page`}</strong>
 			</p>
 		</div>
 	);

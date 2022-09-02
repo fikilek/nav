@@ -1,10 +1,11 @@
 import React from "react";
-import './erfs.css'
+import "./erfs.css";
 
 const Erfs = () => {
 	return (
 		<div className="erfs">
-			<p>My Erfs</p>
+			<p>Erfs</p>
+			<p>Land Parcels</p>
 		</div>
 	);
 };

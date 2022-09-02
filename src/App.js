@@ -20,15 +20,13 @@ import NoPageFound from "./pages/errors/NoPageFound";
 import Modal from "./components/modals/Modal";
 
 // import ModalContext and UserContext
-import ModalContextProvider from './contexts/ModalContext.js'
+import ModalContextProvider from "./contexts/ModalContext.js";
 import { UserContext, UserContextProvider } from "./contexts/UserContext";
 
 // console.log(`UserContext`, UserContext)
 // console.log(`UserContextProvider`, UserContextProvider)
 
 function App() {
-
-
 	return (
 		<ModalContextProvider>
 			<UserContextProvider>
@@ -97,10 +95,7 @@ function App() {
 
 								{/* signout section -----------------------------------------------------*/}
 								{/* path to signout main page [ml1 = signout] */}
-								<Route
-									path="/signout"
-									element={<Signout />}
-								/>
+								<Route path="/signout" element={<Signout />} />
 
 								<Route path="*" element={<NoPageFound />} />
 							</Routes>

@@ -33,6 +33,11 @@ const Signin = () => {
 		setWindowToOpen("");
 	};
 
+	const handleSignup = e => {
+		setWindowToOpen("signup");
+		setOpen(true);
+	};
+
 	const handleSigninSubmit = e => {
 		e.preventDefault();
 		if (show) {
@@ -71,6 +76,7 @@ const Signin = () => {
 								<MdEmail />
 							</span>
 							<input
+								autoFocus
 								type="email"
 								name="email"
 								id="email"
@@ -124,7 +130,9 @@ const Signin = () => {
 								</a>
 							</div>
 							<div className="signin-footer-signup">
-								<a href="#">Sign up</a>
+								<a href="#" onClick={handleSignup}>
+									Sign up
+								</a>
 							</div>
 						</div>
 					</form>
@@ -156,17 +164,20 @@ const Signin = () => {
 							</button>
 							<button className="form-btn submit">Submit</button>
 						</div>{" "}
-						<div className="signin-footer">
-							<div className="signin-footer-fpw">
-								<a href="#" onClick={e => setShow(true)}>
-									Remembered password?
-								</a>
-							</div>
-							<div className="signin-footer-signup">
-								<a href="#">Sign up</a>
-							</div>
-						</div>
 					</form>
+					
+					<div className="signin-footer">
+						<div className="signin-footer-fpw">
+							<a href="#" onClick={e => setShow(true)}>
+								Remembered password?
+							</a>
+						</div>
+						<div className="signin-footer-signup">
+							<a href="#" onClick={handleSignup}>
+								Sign up
+							</a>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

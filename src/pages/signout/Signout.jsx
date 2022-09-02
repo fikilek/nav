@@ -11,19 +11,18 @@ const Signout = () => {
 
 	const navigate = useNavigate();
 
-	const handleSignoutCloseBtn = e => {
-		// TODO: Thee is a bug: a click on svg does not close modal. Find a fix.
-		// console.log(`handleSignoutCloseBtn e.target.id:`, e.target);
-		if (e.target.id === "signout-keep") {
-			// dont close the window but remove or close modal
-			setOpen(false); //Close modal
-		} else {
-			// sign user out, close modal and navigate to Home
-			setUser({ ...user, signedon: false }); //logout user
-			setOpen(false); //Close modal
-			navigate("/", { replace: true });
-		}
+	const handleSignoutKeepBtn = e => {
+		// dont close the window but remove or close modal
+		setOpen(false); //Close modal
 	};
+
+	const handleSignoutCloseBtn = e => {
+		// sign user out, close modal and navigate to Home
+		setUser({ ...user, signedon: false }); //logout user
+		setOpen(false); //Close modal
+		navigate("/", { replace: true });
+	};
+
 	return (
 		<div className="signin-container">
 			<div className="signout">
@@ -32,7 +31,7 @@ const Signout = () => {
 					<button
 						className="close-btn"
 						id="signout-keep"
-						onClick={handleSignoutCloseBtn}
+						onClick={handleSignoutKeepBtn}
 					>
 						<MdClose />
 					</button>

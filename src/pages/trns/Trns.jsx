@@ -1,4 +1,5 @@
 import React from "react";
+import './trns.css'
 import { useParams } from "react-router-dom";
 
 const Trns = () => {
@@ -6,8 +7,9 @@ const Trns = () => {
 	// console.log(`ml2: ${ml2}`);
 	return (
 		<div className="trns">
+			<p>Transactions</p>
 			<p>
-				Transactions: <strong> {ml2 ? `${ml2}` : `Main Page`}</strong>
+				<strong> {ml2 ? `${ml2}` : `Main Page`}</strong>
 			</p>
 		</div>
 	);

@@ -7,8 +7,9 @@ const Asts = () => {
 	// console.log(`ml2: ${ml2}`);
 	return (
 		<div className="asts">
+			<p>Assets</p>
 			<p>
-				Assets: <strong> {ml2 ? `${ml2}` : `Main Page`}</strong>
+				<strong> {ml2 ? `${ml2}` : `Main Page`}</strong>
 			</p>
 		</div>
 	);

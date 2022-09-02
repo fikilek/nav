@@ -1,10 +1,8 @@
-import React from 'react'
-import './bok.css'
+import React from "react";
+import "./bok.css";
 
 const Bok = () => {
-  return (
-    <div className='bok' >My Bok</div>
-  )
-}
+	return <div className="bok">Body of Knowledge</div>;
+};
 
-export default Bok
+export default Bok;

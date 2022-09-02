@@ -51,7 +51,7 @@ const Modal = () => {
 					<div className="modal-body">
 						<>{windowToOpen === "signin" ? <Signin /> : ""}</>
 						<>{windowToOpen === "signout" ? <Signout /> : ""}</>
-						{/* <>{windowToOpen === "signup" ? <Signup /> : ""}</> */}
+						<>{windowToOpen === "signup" ? <Signup /> : ""}</>
 					</div>
 
 					{/* <div className="modal-footer"></div> */}
