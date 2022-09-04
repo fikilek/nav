@@ -245,8 +245,6 @@ li.move-right {
 	flex-direction: column;
 }
 
-
-
 @media screen and (max-width: 850px) {
 	.nav-list {
 		position: fixed;
@@ -260,6 +258,14 @@ li.move-right {
 		color: rgb(18, 18, 18);
 		display: none;
 		overflow-y: scroll;
+	}
+
+	.nav-list.show {
+		display: block;
+	}
+
+	.nav-list.hide {
+		display: none;
 	}
 
 	.nav-list > li {
@@ -290,10 +296,6 @@ li.move-right {
 	}
 
 	.menu-icons {
-		display: block;
-	}
-
-	.show {
 		display: block;
 	}
 

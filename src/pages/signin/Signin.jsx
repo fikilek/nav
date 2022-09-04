@@ -13,6 +13,7 @@ import irepsImage2 from "../../images/irepsImage1.jpg";
 import { ModalContext } from "../../contexts/ModalContext";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
+import { MenuContext } from "../../contexts/MenuContext";
 
 const initSigninData = {
 	email: "",
@@ -25,6 +26,7 @@ const Signin = () => {
 	const [show, setShow] = useState(true);
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
 	const { user, setUser } = useContext(UserContext);
+	const { menuStatus, setMenuStatus } = useContext(MenuContext);
 
 	const navigate = useNavigate();
 
@@ -49,6 +51,7 @@ const Signin = () => {
 		setEmailFpw("");
 		setUser({ ...user, signedon: true });
 		setOpen(false);
+		setMenuStatus(false);
 		navigate("/unp", { replace: true });
 	};
 

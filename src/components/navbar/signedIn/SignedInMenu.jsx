@@ -9,9 +9,11 @@ import { dataAdmin } from "../../../data/menuData/dataMenuAdmin";
 import { dataDbd } from "../../../data/menuData/dataMenuDbd";
 import { NavLink } from "react-router-dom";
 import { ModalContext } from "../../../contexts/ModalContext";
+import { MenuContext } from "../../../contexts/MenuContext";
 
-const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
+const SignedInMenu = () => {
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
+	const { menuStatus, setMenuStatus } = useContext(MenuContext);
 
 	const handleClick = e => {
 		setWindowToOpen(e.target.id);
@@ -19,7 +21,7 @@ const SignedInMenu = ({ menuStatus, setMenuStatus }) => {
 	};
 	return (
 		<ul
-			className={`nav-list ${menuStatus ? "" : "show"}`}
+			className={`nav-list ${menuStatus ? "show" : "hide"}`}
 			onClick={() => setMenuStatus(true)}
 		>
 			{/* Dashboard */}

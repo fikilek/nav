@@ -7,9 +7,10 @@ import SignedInMenu from "../../components/navbar/signedIn/SignedInMenu";
 import SignedOutMenu from "../../components/navbar/signedOut/SignedOutMenu";
 import Modal from "../../components/modals/Modal";
 import { UserContext } from "../../contexts/UserContext";
+import { MenuContext } from "../../contexts/MenuContext";
 
 const Header = () => {
-	const [menuStatus, setMenuStatus] = useState(false);
+	const { menuStatus, setMenuStatus } = useContext(MenuContext)
 	const { user } = useContext(UserContext);
 	// console.log(`menuStatus`, menuStatus);
 
@@ -23,9 +24,9 @@ const Header = () => {
 						</NavLink>
 					</div>
 					{user.signedon ? (
-						<SignedInMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
+						<SignedInMenu  />
 					) : (
-						<SignedOutMenu menuStatus={menuStatus} setMenuStatus={setMenuStatus} />
+						<SignedOutMenu  />
 					)}
 
 					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>

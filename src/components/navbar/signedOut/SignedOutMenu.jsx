@@ -3,9 +3,11 @@ import MenuBlock from "../MenuBlock";
 import { dataBok } from "../../../data/menuData/dataMenuBox";
 import { dataErfs } from "../../../data/menuData/dataMenuErfs";
 import { ModalContext } from "../../../contexts/ModalContext";
+import { MenuContext } from "../../../contexts/MenuContext";
 
-const SignedOutMenu = ({ menuStatus, setMenuStatus }) => {
+const SignedOutMenu = () => {
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
+	const { menuStatus, setMenuStatus } = useContext(MenuContext);
 
 	const handleClick = e => {
 		// Open a modal window
