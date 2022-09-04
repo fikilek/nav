@@ -22,7 +22,7 @@ const SignedInMenu = () => {
 	return (
 		<ul
 			className={`nav-list ${menuStatus ? "show" : "hide"}`}
-			onClick={() => setMenuStatus(true)}
+			onClick={() => setMenuStatus(false)}
 		>
 			{/* Dashboard */}
 			<MenuBlock menuData={dataDbd} />

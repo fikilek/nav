@@ -5,6 +5,9 @@ import { useNavigate } from "react-router-dom";
 import { UserContext } from "../../contexts/UserContext";
 import { ModalContext } from "../../contexts/ModalContext";
 
+import "react-tippy/dist/tippy.css";
+import { Tooltip } from "react-tippy";
+
 const Signout = () => {
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
 	const { user, setUser } = useContext(UserContext);
@@ -28,20 +31,35 @@ const Signout = () => {
 			<div className="signout">
 				<h1>Thanks for using iREPS</h1>
 				<div className="signout-confirm-btns">
-					<button
-						className="close-btn"
-						id="signout-keep"
-						onClick={handleSignoutKeepBtn}
+					<Tooltip
+						// options
+						title="Cancel and continue working"
+						position="bottom"
+						// trigger="click"
 					>
-						<MdClose />
-					</button>
+						<button
+							className="close-btn"
+							id="signout-keep"
+							onClick={handleSignoutKeepBtn}
+						>
+							<MdClose />
+						</button>
+					</Tooltip>
+
+					
+										<Tooltip
+						// options
+						title="Signout and exit the application"
+						position="bottom"
+						// trigger="click"
+					>
 					<button
 						className="close-btn"
 						id="signout-close"
 						onClick={handleSignoutCloseBtn}
 					>
 						<MdCheck />
-					</button>
+					</button></Tooltip>
 				</div>
 			</div>
 		</div>
