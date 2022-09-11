@@ -44,8 +44,8 @@ header {
 .pages {
 	height: calc(100vh - var(--header-height));
 	width: 100%;
-	position: absolute;
-	top: var(--header-height);
+	position: fixed;
+	top: 0;
 	left: 0;
 	border: 1px solid lightgrey;
 }
@@ -219,7 +219,7 @@ li.move-right {
 .user-updated,
 .no-page-found,
 .users,
-.dbd,
+
 .trns,
 .erfs,
 .bok,

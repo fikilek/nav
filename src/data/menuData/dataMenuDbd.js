@@ -38,7 +38,7 @@ export const dataDbd = [
 				children: null,
 			},
 			{
-				to: "/dbd/cuicuit-beekaers",
+				to: "/dbd/cuicuit-breakers",
 				menu: "CBs",
 				"menu-level": "2",
 				icon: null,

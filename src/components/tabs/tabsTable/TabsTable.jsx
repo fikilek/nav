@@ -17,7 +17,8 @@ const TabsTable = ({ tableData, ml1, ml2, ml3 }) => {
 			</Tooltip>
 
 			<div> {` ml1: ${ml1} `}</div>
-			<div> {` ml2: ${ml2} `}</div>
+			<div className="tabs-table-ml2" data-tooltip="menu level two tooltip" > {` ml2: ${ml2} `}</div>
+
 			<div> {` ml3: ${ml3} `}</div>
 		</>
 	);

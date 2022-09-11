@@ -1,4 +1,59 @@
 .dbd {
-  font-size: 10rem;
-  color: rgb(107, 23, 101);
+	font-size: 1.6rem;
+	color: #1d275b;
+	display: grid;
+	grid-template-columns: 1fr;
+	margin: 0.5rem;
+	background-color: #f7f8f9;
+}
+
+.dbd-heading {
+	display: grid;
+	grid-template-columns: 1fr 7fr;
+	padding: 1rem;
+	background-color: bisque;
+	grid-gap: 2rem;
+}
+
+.dbd-title {
+	font-size: 2rem;
+}
+
+.dbd-filters {
+	display: flex;
+	justify-content: space-between;
+}
+
+.dbd-body-ast-totals {
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1rem;
+	margin: 1rem 0;
+}
+
+.dbd-body {
+	display: grid;
+	grid-template-columns: auto 5fr;
+}
+
+.dbd-body-totals {
+	font-weight: 600;
+	color: rgb(64, 64, 255);
+}
+
+.dbd-body-ast-total {
+	/* margin: 1rem; */
+	background-color: #e7fafd;
+}
+
+.dbd-graphs {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-gap: 1rem;
+	margin: 1rem 0 1rem 1rem;
+}
+
+.dbd-graph {
+	background-color: beige;
 }
