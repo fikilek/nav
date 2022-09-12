@@ -10,32 +10,31 @@ import { UserContext } from "../../contexts/UserContext";
 import { MenuContext } from "../../contexts/MenuContext";
 
 const Header = () => {
-	const { menuStatus, setMenuStatus } = useContext(MenuContext)
+	const { menuStatus, setMenuStatus } = useContext(MenuContext);
 	const { user } = useContext(UserContext);
 	// console.log(`menuStatus`, menuStatus);
 
 	return (
-		<header>
-			<div className="container">
+		<div className="app-container">
+			<header>
+				{/* <div className="container"> */}
 				<nav>
 					<div className="logo">
 						<NavLink to="/">
 							<FaRubleSign />
 						</NavLink>
 					</div>
-					{user.signedon ? (
-						<SignedInMenu  />
-					) : (
-						<SignedOutMenu  />
-					)}
+					{user.signedon ? <SignedInMenu /> : <SignedOutMenu />}
 
 					<div className="menu-icons" onClick={() => setMenuStatus(!menuStatus)}>
-						{menuStatus ?  <MdClose /> : <MdMenu />}
+						{menuStatus ? <MdClose /> : <MdMenu />}
 					</div>
 				</nav>
+			</header>
+			<div className="pages">
 				<Outlet />
 			</div>
-		</header>
+		</div>
 	);
 };
 

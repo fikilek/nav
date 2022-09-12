@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { BrowserRouter, Routes, Route, Link, Outlet } from "react-router-dom";
 
-import "./App.css";
+import "./app.css";
 
 // import pages
 import Header from "./pages/header/Header";
@@ -32,11 +32,12 @@ function App() {
 		<ModalContextProvider>
 			<UserContextProvider>
 				<MenuContextProvider>
-					<div className="App">
+					<div className="app">
 						<BrowserRouter>
 							{/* <Header /> */}
 
-							<div className="pages">
+							{/* <div className="pages"> */}
+							{/* <div className="app-container"> */}
 								<Routes>
 									<Route path="/" element={<Header />}>
 										<Route index element={<Home />} />
@@ -105,7 +106,7 @@ function App() {
 								</Routes>
 
 								<Modal />
-							</div>
+							{/* </div> */}
 						</BrowserRouter>
 					</div>
 				</MenuContextProvider>

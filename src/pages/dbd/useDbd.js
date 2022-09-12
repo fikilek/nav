@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { totals } from "../../data/dbdData/dbdData/dbdData";
 import { trns_monthly_totals } from "../../data/dbdData/dbdData/dbdData";
 import useSumupTrns from "./useSumupTrns";

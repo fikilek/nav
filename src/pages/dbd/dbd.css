@@ -3,7 +3,7 @@
 	color: #1d275b;
 	display: grid;
 	grid-template-columns: 1fr;
-	margin: 0.5rem;
+	margin: 0 0.5rem;
 	background-color: #f7f8f9;
 }
 
@@ -28,7 +28,7 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	grid-gap: 1rem;
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 }
 
 .dbd-body {
@@ -52,8 +52,38 @@
 	grid-template-rows: 1fr 1fr;
 	grid-gap: 1rem;
 	margin: 1rem 0 1rem 1rem;
+	grid-template-areas: 
+	"asts-bar-chart asts-pie-chart"
+	"trns-bar-chart date-time-filters";
 }
 
 .dbd-graph {
-	background-color: beige;
+	background-color: beige;	
+	border: 2px solid lightblue;
+	border-radius: 2rem;
+}
+
+/* asts bar cahrt */
+.dbd-graph-asts-bar-chart {
+	grid-area: asts-bar-chart ;
+}
+
+/* asts pie chart */
+.dbd-graph-asts-pie-char {
+	grid-area: asts-pie-chart;
+}
+
+/* trns bar chart */
+.dbd-graph-trnas-bar-char {
+	grid-area: trns-bar-chart;
+}
+
+
+.dbd-date-filters {
+	grid-area: date-time-filters;
+}
+
+.chart {
+	width: 100%;
+	height: 100%;
 }
