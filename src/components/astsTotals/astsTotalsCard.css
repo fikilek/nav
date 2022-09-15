@@ -6,7 +6,29 @@
   border-radius: 1rem;
   outline: 1px solid #c2e0ff;
   grid-template-areas: 
- " astdata astimg trndata";
+ " astdata astimg trndata color";
+}
+
+.ast-feeders {
+  border-right: 2rem solid #100720;
+}
+.ast-transformers {
+  border-right: 2rem solid #C6EB00;
+}
+.ast-poles {
+  border-right: 2rem solid #FA7070;
+}
+.ast-boxes {
+  border-right: 2rem solid #A10035;
+}
+.ast-meters {
+  border-right: 2rem solid #3FA796;
+}
+.ast-cbs {
+  border-right: 2rem solid #FEC260;
+}
+.ast-seals {
+  border-right: 2rem solid #21E1E1;
 }
 
 .ast-data, .trn-data, .ast-img {
@@ -38,4 +60,9 @@
 
 .trn-data {
   grid-area: trndata;
+}
+
+.ast-color-code {
+  grid-area: color;
+  width: 1rem;
 }
