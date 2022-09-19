@@ -14,6 +14,7 @@ import { ModalContext } from "../../contexts/ModalContext";
 import { UserContext } from "../../contexts/UserContext";
 import { useNavigate } from "react-router-dom";
 import { MenuContext } from "../../contexts/MenuContext";
+import { unpTableData as unpData } from "../../data/adminData/unpData";
 
 const initSigninData = {
 	email: "",
@@ -21,12 +22,19 @@ const initSigninData = {
 };
 
 const Signin = () => {
+	// user credentials comprise of user email and password
 	const [userCredentials, setUserCredentials] = useState(initSigninData);
+
+	// Fpw is the Forgotten Password section
 	const [emailFpw, setEmailFpw] = useState("");
+
+	// show controlls which of the signin or forgotten password form is displayed
 	const [show, setShow] = useState(true);
+
+	// this section sontrols the display of the modal
 	const { setWindowToOpen, setOpen } = useContext(ModalContext);
-	const { user, setUser } = useContext(UserContext);
 	const { menuStatus, setMenuStatus } = useContext(MenuContext);
+	const { user, setUser } = useContext(UserContext);
 
 	const navigate = useNavigate();
 
@@ -47,12 +55,35 @@ const Signin = () => {
 		} else {
 			console.log(`user credentials: `, emailFpw);
 		}
-		setUserCredentials(initSigninData);
+
+		// check if email and pwd on the signin form match those on unpData
+
+		const checkedEmail =
+			unpData && unpData.find(({ email }) => email === userCredentials.email);
+		console.log(`checkedEmail`, checkedEmail);
+		const checkedPassword =
+			checkedEmail.password === userCredentials.password;
+		console.log(`checkedPassword`, checkedPassword);
+
 		setEmailFpw("");
-		setUser({ ...user, signedon: true });
 		setOpen(false);
 		setMenuStatus(false);
-		navigate("/unp", { replace: true });
+		if (checkedEmail && checkedPassword) {
+			console.log(`email ${userCredentials.email} IS authenticated`);
+			setUser({
+				...user,
+				surname: checkedEmail.surname,
+				name: checkedEmail.name,
+				email: checkedEmail.email,
+				role: checkedEmail.role,
+				signedon: true,
+				state: checkedEmail.state,
+			});
+			navigate("/unp", { replace: true });
+		} else {
+			console.log(`email ${userCredentials.email} NOT known`);
+			navigate("/", { replace: true });
+		}
 	};
 
 	return (
@@ -168,7 +199,7 @@ const Signin = () => {
 							<button className="form-btn submit">Submit</button>
 						</div>{" "}
 					</form>
-					
+
 					<div className="signin-footer">
 						<div className="signin-footer-fpw">
 							<a href="#" onClick={e => setShow(true)}>

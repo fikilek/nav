@@ -2,7 +2,8 @@
 export const userObj = {
 	surname: "",
 	name: "",
-	email: "fikilekentane@gmail.com",
-	role: "super-user",
+	email: "",
+	role: "",
 	signedon: false,
+	state: '',
 };

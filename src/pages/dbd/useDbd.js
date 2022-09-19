@@ -4,8 +4,7 @@ import { trns_monthly_totals } from "../../data/dbdData/dbdData/dbdData";
 import useSumupTrns from "./useSumupTrns";
 
 const useDbd = () => {
-	const [trnsMonthlyTotals, setTrnsMonthlyTotals] =
-		useState(trns_monthly_totals);
+	const [trnsMonthlyTotals, setTrnsMonthlyTotals] = useState(trns_monthly_totals);
 	const { sumTrns } = useSumupTrns(trnsMonthlyTotals);
 	const sum =
 		totals &&

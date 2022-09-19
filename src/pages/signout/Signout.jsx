@@ -33,7 +33,7 @@ const Signout = () => {
 				<div className="signout-confirm-btns">
 					<Tooltip
 						// options
-						title="Cancel and continue working"
+						title="Cancel Signout and continue working"
 						position="bottom"
 						// trigger="click"
 					>
